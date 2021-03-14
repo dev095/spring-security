@@ -42,10 +42,10 @@
 <h2>Add User</h2>
 <br>
 <form th:name="user" method="post" th:action="@{/admin/add}">
-    Name<label><input type="text" name="username"></label><br><br>
-    Last name<label><input type="text" name="surname"></label><br><br>
-    Email<label><input type="text" name="email"></label><br><br>
-    Password<label><input type="text" name="password"></label><br><br>
+    Name<span>     </span><label><input type="text" name="username"></label><br><br>
+    Surname<span>  </span><label><input type="text" name="surname"></label><br><br>
+    Email<span>    </span><label><input type="text" name="email"></label><br><br>
+    Password<span> </span><label><input type="password" name="password"></label><br><br>
 
     <select th:name="role" multiple="multiple" size="2" required>
         <option th:each="role : ${roles}"

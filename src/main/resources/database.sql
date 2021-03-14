@@ -4,7 +4,6 @@ CREATE TABLE users (
                        id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
                        username VARCHAR(255) not null ,
                        surname VARCHAR(255),
-                       age VARCHAR(10),
                        email VARCHAR(255) NOT NULL ,
                        password VARCHAR(255) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8 ;
@@ -38,33 +37,3 @@ INSERT INTO users (username, password, email) VALUES ('admin', '$2y$12$/9Pa99JKD
 INSERT INTO users_roles (user_id, role_id) VALUES (1, 1);
 INSERT INTO users_roles (user_id, role_id) VALUES (2, 2);
 INSERT INTO users_roles (user_id, role_id) VALUES (2, 1);
-
-
--- new table
-
-# CREATE TABLE 'users' (
-#                           'id' BIGINT NOT NULL AUTO_INCREMENT,
-#                           'username' VARCHAR(60) NOT NULL,
-#                           'surname' VARCHAR(60) NOT NULL,
-#                           'age' VARCHAR(60),
-#                           'email' VARCHAR(60) NOT NULL ,
-#                           'password' VARCHAR(255) NOT NULL,
-#                           PRIMARY KEY ('id')
-# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-# CREATE TABLE 'roles' (
-#                          'id' INT NOT NULL AUTO_INCREMENT,
-#                          'name' varchar(60) NOT NULL,
-#                          'rating' int(11) NOT NULL,
-#                          'FK_Organization_id' int(11) NOT NULL,
-#                          PRIMARY KEY ('id'),
-#                          KEY 'FK_Organization_id' ('FK_Organization_id'),
-#                          CONSTRAINT 'FK_Organization_id' FOREIGN KEY ('FK_Organization_id') REFERENCES 'organization' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION
-# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-# CREATE TABLE 'team_member' (
-#                                'id' int(11) NOT NULL AUTO_INCREMENT,
-#                                'FK_Member_id' int(11) NOT NULL,
-#                                'FK_Team_id' int(11) NOT NULL,
-#                                PRIMARY KEY ('id'),
-#                                CONSTRAINT 'FK_Member_id' FOREIGN KEY ('id') REFERENCES 'member' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION,
-#                                CONSTRAINT 'FK_Team_id' FOREIGN KEY ('id') REFERENCES 'teams' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION
-# ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
