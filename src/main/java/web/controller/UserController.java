@@ -54,9 +54,6 @@ public class UserController {
 
 	@PostMapping(value = "/admin/delete")
 	public String deleteUser(@ModelAttribute("id") Long id){
-//		if (!userService.checkUserById(id)) {
-//			return "redirect:/admin";
-//		}
 		userService.remove(id);
 		return "redirect:/admin";
 	}
